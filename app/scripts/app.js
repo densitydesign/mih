@@ -27,6 +27,22 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/twitterLang', {
+        templateUrl: 'views/twitterlang.html',
+        controller: 'TwitterlangCtrl'
+      })
+      .when('/twitterHashtags', {
+        templateUrl: 'views/twitterhashtags.html',
+        controller: 'TwitterhashtagsCtrl'
+      })
+      .when('/foursquare', {
+        templateUrl: 'views/foursquare.html',
+        controller: 'FoursquareCtrl'
+      })
+      .when('/instagram', {
+        templateUrl: 'views/instagram.html',
+        controller: 'InstagramCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
