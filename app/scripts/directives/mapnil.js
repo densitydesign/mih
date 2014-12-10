@@ -29,7 +29,6 @@ angular.module('mihApp')
 		    infoControl: true,
 		    minZoom:10,
 		    maxZoom:16
-		    //maxBounds: [[45.3705,9.0404],[45.5554,9.3288]]
 		}).addTo(mapNil);
 
       }

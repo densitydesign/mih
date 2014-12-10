@@ -34,7 +34,7 @@ body {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 100%;
   }
 }
 .container-narrow > hr {
@@ -78,7 +78,6 @@ body {
   }
 }
 
-
 /* timeline */
 
 .axis path,
@@ -104,6 +103,25 @@ body {
   stroke:none;
 }
 
+/* map */
+
 #map{
   height: 400px;
 }
+
+
+.domain{
+    fill:none;
+}
+
+.resize{
+    fill:black;
+}
+#hashtags-viz{
+    width: 100%;
+}
+.cities{
+    font-size:1.2em;
+    width: 100%;
+}
+
