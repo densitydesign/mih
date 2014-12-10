@@ -9,9 +9,8 @@
  */
 angular.module('mihApp')
   .controller('TwitterlangCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+  	$scope.nilData = [];
+  	$scope.langs = []
+
   });

@@ -29,7 +29,8 @@ angular.module('mihApp')
           .on("brushed", function(d){
 
             crossfilterlang.day().filterRange(d)
-            console.log(crossfilterlang.id_nils().all())
+            //console.log(crossfilterlang.id_nils().all())
+            scope.nilData = crossfilterlang.id_nils().all();
 
             // scope.tableData = cfSource.year().top(Infinity).concat(cfTarget.year().top(Infinity))
             // scope.streamData = [
@@ -44,9 +45,9 @@ angular.module('mihApp')
             //     ]
             //   }
             // ]
-            // if(!scope.$$phase) {
-            //   scope.$apply()
-            // }
+            if(!scope.$$phase) {
+              scope.$apply()
+            }
           })
 
         var chart = d3.select(element[0]);
@@ -71,6 +72,7 @@ angular.module('mihApp')
                 // }
 
                 crossfilterlang.add(tweets);
+
 
 
                 // scope.startDate = cfSource.year().bottom(1)[0].year
@@ -98,6 +100,12 @@ angular.module('mihApp')
                 // ]
 
                 timelineData = [{key:"tweets", values:crossfilterlang.days().all()}];
+
+                //crossfilterlang.lang().filterFunction(function(d) { return d != "it" && d != "en"})
+                scope.nilData = crossfilterlang.id_nils().all();
+                //var langs = crossfilterlang.langs().all()
+                //scope.langs = langs.map(function(d){return d.key})
+
 
                 // flows.sort(function(a, b){ return d3.ascending(a.year, b.year); })
                 // flows.forEach(function(d){
