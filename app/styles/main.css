@@ -34,7 +34,7 @@ body {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 100%;
   }
 }
 .container-narrow > hr {
@@ -76,4 +76,41 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+.domain{
+    fill:none;
+}
+.extent {
+    fill: rgba(255,255,255,0.6);
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.y path{
+    fill: none;
+    stroke-width:0;
+}
+
+.axis .minor line {
+    stroke: #777;
+    stroke-dasharray: 2,2;
+}
+
+.brush{
+    stroke:none;
+}
+
+.resize{
+    fill:black;
+}
+#hashtags-viz{
+    width: 100%;
+}
+.cities{
+    font-size:1.2em;
+    width: 100%;
 }
