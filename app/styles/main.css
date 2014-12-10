@@ -77,3 +77,33 @@ body {
     border-bottom: 0;
   }
 }
+
+
+/* timeline */
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.y path{
+  fill: none;
+  stroke-width:0;
+}
+
+.axis .minor line {
+  stroke: #777;
+  stroke-dasharray: 2,2;
+}
+
+.brush{
+  fill:black;
+  fill-opacity:0.2;
+  stroke:none;
+}
+
+#map{
+  height: 400px;
+}
