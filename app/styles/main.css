@@ -306,12 +306,6 @@ slider div.bar {
     background: #eaeaea !important;
 }
 
-.ig-item{
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
 .ig-item a, .ig-item a img {
     width: 100%;
     height:100%;
