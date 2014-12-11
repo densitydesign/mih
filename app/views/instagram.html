@@ -1,6 +1,14 @@
 
-<div ng-click="see=!see">Toggle images</div>
+<div class="row instagram-controls">
+    <h3 class="col-md-5"><b>{{selected[0].nil}}</b> - <b>{{selected.length}}</b> images</h3>
+    <div class="col-md-3">
+    <div class="btn-group">
+        <label class="btn btn-success" ng-model="see" btn-radio="true" uncheckable>Images</label>
+        <label class="btn btn-success" ng-model="see" btn-radio="false" uncheckable>Colors</label>
 
+    </div>
+    </div>
+</div>
 <div ng-repeat="s in selected" ng-style="{'background-color':s.color} " style="width:150px;height:150px;float:left">
     <img ng-show="see" ng-src="{{s.thumb}}"/>
 </div>
