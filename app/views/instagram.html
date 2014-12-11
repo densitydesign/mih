@@ -1,6 +1,6 @@
 
 <div ng-click="see=!see">Toggle images</div>
 
-<div ng-repeat="s in selected" ng-style="{'background-color':'rgba('+s.r+','+s.g+','+s.b+',1)'} " style="width:150px;height:150px;float:left">
+<div ng-repeat="s in selected" ng-style="{'background-color':s.color} " style="width:150px;height:150px;float:left">
     <img ng-show="see" ng-src="{{s.thumb}}"/>
 </div>
