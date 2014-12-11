@@ -31,6 +31,7 @@ angular.module('mihApp')
             $scope.sort = "l";
 
             $scope.slide = 150;
+            $scope.$apply();
 
             $scope.$watch("sort",function(newValue,oldValue){
                 if(newValue!==oldValue) {

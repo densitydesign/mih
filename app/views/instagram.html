@@ -1,6 +1,6 @@
 
 
-
+<h4>Instagram pictures by NIL posted between 1/6/2014 and 7/6/2014</h4>
 <div id="map-ig" mapnilIg></div>
 <div ng-show="zone" class="result">
 <div class="row instagram-controls">
@@ -25,9 +25,12 @@
         </div>
     </div>
     </div>
+<div class="col-md-3">
+    <slider floor="10" ceiling="150" step="5" precision="1" ng-model="slide"></slider>
+</div>
 
 </div>
-<div ng-repeat="s in selected" ng-style="{'background-color':s.color} " style="width:150px;height:150px;float:left">
+<div class="ig-item" ng-repeat="s in selected" ng-style="{'background-color':s.color,'width':slide+'px', 'height':slide+'px','float':'left'}">
     <a href="{{s.link}}"><img ng-show="see" ng-src="{{s.thumb}}"/></a>
 </div>
 </div>

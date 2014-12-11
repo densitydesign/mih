@@ -286,10 +286,33 @@ body {
 .start {
     padding: 100px 0;
     text-align: center;
-    color:#eee;
+    color:#ddd;
     font-size:3em;
     font-weight: 900;
 }
 .mapsel{
     fill: #ff4c3b;
+}
+
+slider div.handle {
+    background:#aaa !important;
+    border:none;
+}
+
+slider div.handle:after {
+    background: transparent !important;
+}
+slider div.bar {
+    background: #eaeaea !important;
+}
+
+.ig-item{
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.ig-item a, .ig-item a img {
+    width: 100%;
+    height:100%;
 }
