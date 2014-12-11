@@ -10,4 +10,5 @@
 angular.module('mihApp')
   .controller('FoursquareCtrl', function ($scope) {
   	$scope.selectedNil;
+  	$scope.selectedNilName;
   });

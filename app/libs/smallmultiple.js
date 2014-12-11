@@ -129,6 +129,7 @@
         lines.append("text")
           .attr("class", "title")
           .attr("text-anchor", "middle")
+          .attr("font-weight", "bold")
           .attr("y", height).attr("dy", margin.bottom / 2 + 5)
           .attr("x", width / 2).text(function(c) {
             return c.key;
@@ -141,7 +142,7 @@
           .attr("dy", 13).attr("y", height)
           .attr("x", 0)
           .text(function(c) {
-            return xValue(c.values[0]).getDate() + "/" + xValue(c.values[0]).getMonth();
+            return xValue(c.values[0]).getDate() + "/" + (xValue(c.values[0]).getMonth() + 1);
           });
 
         lines.append("text")

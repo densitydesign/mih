@@ -54,9 +54,14 @@ angular.module('mihApp')
     					.attr("fill-opacity", 0.75)
     					.on("click", function(d){ 
     						scope.selectedNil = d.properties['ID_NIL'].toString();
-    						if(!scope.$$phase) {
+				            scope.selectedNilName = d.properties['NIL'];
+				            
+				            d3.selectAll(".mapsel4sq").classed("mapsel4sq",false);
+                            d3.select(this).classed("mapsel4sq",true);
+                            if(!scope.$$phase) {
 				               scope.$apply()
 				            }
+
     					})
   						
   				mapNil.on("viewreset", reset);

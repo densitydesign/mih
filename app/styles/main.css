@@ -212,12 +212,13 @@ body {
 }
 
 .chart .area {
-  fill: #cec6b9;
+  fill: #ccc;
+  fill-opacity: 0.75;
 }
 
 .chart .line {
   fill: none;
-  stroke: #74736c;
+  stroke: #F94877;
   stroke-width: 1.4px;
 }
 
@@ -226,11 +227,13 @@ body {
 }
 
 .chart .axis line, .chart .grid line {
-  stroke-width: .5px;
+/*  stroke-width: .5px;
   shape-rendering: crispEdges;
   stroke: #fff;
-  opacity: 0.5;
+  opacity: 0.5;*/
   pointer-events: none;
+    stroke: #777;
+  stroke-dasharray: 2,2;
 }
 
 .chart .axis path {
@@ -240,6 +243,15 @@ body {
 .chart .hidden {
   display:none;
   opacity: 0.0;
+}
+
+.mapsel4sq{
+    fill: #F94877;
+}
+
+.titleNil{
+  text-align: center;
+  padding-top: 20px;
 }
 
 /* other */
