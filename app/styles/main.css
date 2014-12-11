@@ -176,3 +176,10 @@ body {
     width: 100%;
 }
 
+.instagram-controls {
+    border-bottom: 3px solid black;
+    margin-bottom:20px;
+}
+.instagram-controls h3{
+    font-size: 1.2em;
+}
