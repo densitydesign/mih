@@ -52,6 +52,12 @@ angular.module('mihApp')
     					.attr("stroke", "white")
     					.attr("fill", "#ccc")
     					.attr("fill-opacity", 0.75)
+    					.on("click", function(d){ 
+    						scope.selectedNil = d.properties['ID_NIL'].toString();
+    						if(!scope.$$phase) {
+				               scope.$apply()
+				            }
+    					})
   						
   				mapNil.on("viewreset", reset);
   				reset();

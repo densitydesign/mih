@@ -110,6 +110,56 @@ body {
   height: 400px;
 }
 
+/* small multiples*/
+
+.chart {
+  float: left;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-top:0;
+  padding-left:0;
+}
+
+.chart svg {
+  font-size: 10px;
+}
+
+.chart .background {
+  fill: none;
+}
+
+.chart .area {
+  fill: #cec6b9;
+}
+
+.chart .line {
+  fill: none;
+  stroke: #74736c;
+  stroke-width: 1.4px;
+}
+
+.chart .title {
+  font-size: 12px;
+}
+
+.chart .axis line, .chart .grid line {
+  stroke-width: .5px;
+  shape-rendering: crispEdges;
+  stroke: #fff;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.chart .axis path {
+  display: none;
+}
+
+.chart .hidden {
+  display:none;
+  opacity: 0.0;
+}
+
+/* other */
 
 .domain{
     fill:none;

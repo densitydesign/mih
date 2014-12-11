@@ -9,9 +9,5 @@
  */
 angular.module('mihApp')
   .controller('FoursquareCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  	$scope.selectedNil;
   });
