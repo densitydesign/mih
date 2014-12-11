@@ -63,6 +63,10 @@ angular.module('mihApp')
 				            }
 
     					})
+    					.each(function(d){
+             					$(this).tooltip('destroy')
+             					$(this).tooltip({title:d.properties['NIL'], placement:"left", container: 'body'})
+          					})
   						
   				mapNil.on("viewreset", reset);
   				reset();
