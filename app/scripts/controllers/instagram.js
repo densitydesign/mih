@@ -9,19 +9,15 @@
  */
 angular.module('mihApp')
   .controller('InstagramCtrl', function ($scope,Fileloader) {
-        Fileloader.getFile("data/instagram/result3.json").then(function(data){
+
+        $scope.data = [];
+        Fileloader.getFile("data/instagram.json").then(function(data){
             //console.log(data);
             $scope.see = true;
 
+            $scope.data = data;
 
-            var lol = d3.nest()
-                .key(function(d){return d.nil})
-                .entries(data);
-
-            console.log(lol);
-
-
-            data.forEach(function(d){
+            $scope.data.forEach(function(d){
                 var col = d3.rgb(d.color);
                 var hsl = col.hsl();
                 d.h = hsl.h;
@@ -29,17 +25,20 @@ angular.module('mihApp')
                 d.l = hsl.l;
 
             })
+            $scope.zone = null;
+            $scope.selected = [];
 
+            $scope.sort = "l";
 
+            $scope.slide = 150;
 
-
-            $scope.selected = data.filter(function(d){
-                return d.id_nil ==14;
-            }).sort(function(a,b){
-                return b.l- a.l;
+            $scope.$watch("sort",function(newValue,oldValue){
+                if(newValue!==oldValue) {
+                    $scope.selected.sort(function(a,b){
+                        return b[newValue]-a[newValue];
+                    })
+                }
             })
-
-            console.log($scope.selected);
 
         });
   });

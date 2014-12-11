@@ -106,7 +106,7 @@ body {
 
 /* map */
 
-#map{
+#map,#map-ig{
   height: 400px;
 }
 
@@ -177,9 +177,24 @@ body {
 }
 
 .instagram-controls {
+    margin-top:50px;
     border-bottom: 3px solid black;
     margin-bottom:20px;
+    padding-bottom:10px;
 }
 .instagram-controls h3{
     font-size: 1.2em;
+    padding:0;
+    margin:0;
+    line-height:34px;
+}
+.start {
+    padding: 100px 0;
+    text-align: center;
+    color:#eee;
+    font-size:3em;
+    font-weight: 900;
+}
+.mapsel{
+    fill: #ff4c3b;
 }
