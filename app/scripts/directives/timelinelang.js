@@ -17,8 +17,8 @@ angular.module('mihApp')
 
         var stacked = mih.stackedBar()
           .width(element.width())
-          .height(200)
-          .stackColors(["#7CA49E", "#D35530"])
+          .height(100)
+          .stackColors(["#428bca", "#D35530"])
           .on("brushing", function(d){
             // scope.startDate = d[0].getFullYear()
             // scope.endDate = d[1].getFullYear()
@@ -65,11 +65,11 @@ angular.module('mihApp')
                 	return
                 };
 
-                // if(cfSource.size()>0){
-                //   cfSource.year().filterAll()
-                //   cfSource.type().filterAll()
-                //   cfSource.clear();
-                // }
+                if(crossfilterlang.size()>0){
+                  crossfilterlang.day().filterAll()
+                  crossfilterlang.id_nil().filterAll()
+                  crossfilterlang.clear();
+                }
 
                 crossfilterlang.add(tweets);
 

@@ -80,7 +80,14 @@ h1,h2,h3,h4{
     font-weight: bold;
 }
 
-
+#inst .btn{
+  background-color: #fff;
+  border-radius: 0px;
+  border-color: #ccc;
+}
+#inst .btn.active{
+  background-color: #ccc;
+}
 /* Space out content a bit */
 body {
   padding-top: 20px;
@@ -187,11 +194,13 @@ body {
   stroke:none;
 }
 
+
 /* map */
 
 #map,#map-ig{
   height: 400px;
 }
+
 
 /* small multiples*/
 

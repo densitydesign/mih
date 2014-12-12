@@ -11,6 +11,10 @@ angular.module('mihApp')
   .controller('TwitterlangCtrl', function ($scope) {
 
   	$scope.nilData = [];
-  	$scope.langs = []
+  	$scope.langs = [];
+  	$scope.legendData;
+	$scope.selectedNil;
+	$scope.selectedNilName;
+	$scope.selectedT;
 
   });

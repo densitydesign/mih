@@ -13,8 +13,9 @@ angular.module('mihApp')
       replace: false,
       link: function (scope, element, attrs) {
 
-	    var nil,
-	    	mapNil = L.map(
+	    var nil;
+
+	    var mapNil = L.map(
 	     	element[0],
 	     	{maxBounds: [[45.3705,9.0404],[45.5554,9.3288]]}
 	     	).setView([45.460, 9.194], 11);
@@ -37,7 +38,7 @@ angular.module('mihApp')
 
       	//var colorLangDomain = data.map(function(d){return d.key});
         //var colorLang = d3.scale.ordinal().range(stackColors).domain(colorDomain)
-        var colorLang = d3.scale.category10()
+        var colorLang = d3.scale.category20b()
 
 	    filemanager
 	        .getFile('data/NIL.json')
@@ -52,6 +53,19 @@ angular.module('mihApp')
     					.attr("stroke", "white")
     					.attr("fill", "#ccc")
     					.attr("fill-opacity", 0.75)
+    					.on("click", function(d){
+    						scope.selectedNil = d.properties['ID_NIL'].toString();
+				            scope.selectedNilName = d.properties['NIL'] + " (mostly " + d.properties['lang'] + ")";
+
+				            crossfilterlang.id_nil().filterAll()
+				            crossfilterlang.id_nil().filterFunction(function(e){return e == 'id_' + d.properties['ID_NIL']})
+
+				            scope.selectedT = crossfilterlang.author().top(Infinity)
+
+                            if(!scope.$$phase) {
+				               scope.$apply()
+				            }
+    					})
   						
   				mapNil.on("viewreset", reset);
   				reset();
@@ -93,19 +107,32 @@ angular.module('mihApp')
 		 	})
 
 		 	var colorDomain = _.uniq(d3.values(nilDataLang));
+
+		 	colorDomain.sort(function(a, b){
+			    if(a < b) return -1;
+			    if(a > b) return 1;
+			    return 0;
+			})
+
 		 	colorLang.domain(colorDomain)
 
-		 	console.log(nilDataLang)
+		 	scope.legendData = colorDomain;
+		 	
 
 		 	feature.transition().duration(500)
 		 		.attr("fill", function(d){
 		 			var id = d.properties['ID_NIL']
 		 			if(nilDataLang[id]){
+		 				d.properties['lang'] = nilDataLang[id];
 		 				return colorLang(nilDataLang[id])
 		 			}else{
 		 				return "#ccc"
 		 			}
 		 		})
+
+		 	if(scope.selectedNil){
+		 		scope.selectedT = crossfilterlang.author().top(Infinity)
+		 	}
 		 }
 
 		scope.$watch('nilData', function(newValue, oldValue){

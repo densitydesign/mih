@@ -1,3 +1,30 @@
-<p>This is the twitterLang view.</p>
+<h4>Most used languages in geo-located tweets by zone</h4>
 <div timeline-lang></div>
 <div id="map" mapnil></div>
+<div langlegend></div>
+<div class="row">
+<div class="col-md-12 titleNil">
+	<h4>{{selectedNilName}}</h4>
+</div>
+</div>
+<div ng-hide="selectedNilName" class="start"><span>Click on a zone on the map</span></div>
+<div class="row" ng-if="selectedT">
+<div class="col-md-12">
+<table class="table table-striped">
+<thead>
+        <tr>
+          <th>#</th>
+          <th>author</th>
+          <th>text</th>
+        </tr>
+</thead>
+<tbody>
+        <tr ng-repeat="t in selectedT">
+          <td>{{$index + 1 }}</td>
+          <td>{{t.author}}</td>
+          <td>{{t.text}}</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>

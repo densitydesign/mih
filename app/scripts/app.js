@@ -22,8 +22,9 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        // templateUrl: 'views/main.html',
+        // controller: 'MainCtrl',
+        redirectTo: '/twitterLang'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
