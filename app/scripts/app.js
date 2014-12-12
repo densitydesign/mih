@@ -46,6 +46,10 @@ angular
         templateUrl: 'views/instagram.html',
         controller: 'InstagramCtrl'
       })
+      .when('/working', {
+        templateUrl: 'views/working.html',
+        controller: 'WorkingCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
