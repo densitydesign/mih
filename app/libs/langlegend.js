@@ -34,31 +34,23 @@
         }
 
        
-        var colorLang = d3.scale.category20b()
+        var colorLang = d3.scale.category20b();
         //var colorDomain = _.uniq(d3.values(data));
 
-        colorLang.domain(data)
+        colorLang.domain(data);
 
         
         /* legend */
         
 
-        var legendScale = d3.scale.ordinal().rangeBands([0, chartWidth], 0, 0).domain(data)
+        var legendScale = d3.scale.ordinal().rangeBands([0, chartWidth], 0, 0).domain(data);
 
-       
 
-        // legends.exit().remove()
-
-        // legends.enter()
-        //     .append("g")
-        //     .attr("class", "timeline-legend")
-        //     .attr("transform", function(d){ return "translate(" + legendScale(d) + "," + (height - 20) + ")"});
-
-        var legendRect= chart.selectAll(".legendRect").data(data)
+        var legendRect= chart.selectAll(".legendRect").data(data);
 
         legendRect.transition().duration(duration)
           .attr("fill", function(d){return colorLang(d)})
-          .attr("x", function(d){ return legendScale(d)})
+          .attr("x", function(d){ return legendScale(d)});
         
         legendRect
           .enter()
@@ -68,15 +60,15 @@
           .attr("height", 10)
           .attr("x", function(d){ return legendScale(d)})
           .attr("class", "legendRect")
-          .attr("y", -10)
+          .attr("y", -10);
 
         legendRect.exit().remove()
 
-        var legendTxt = chart.selectAll(".legendTxt").data(data)
+        var legendTxt = chart.selectAll(".legendTxt").data(data);
 
         legendTxt.transition().duration(duration)
           .text(function(d){return d })
-          .attr("x", function(d){ return (legendScale(d) + 20)})
+          .attr("x", function(d){ return (legendScale(d) + 20)});
 
         legendTxt
           .enter()
@@ -86,9 +78,9 @@
           .attr("font-weight","bold")
           .attr("font-size", "0.9em")
           .attr("class", "legendTxt")
-          .attr("x", function(d){ return (legendScale(d) + 20)})
+          .attr("x", function(d){ return (legendScale(d) + 20)});
 
-        legendTxt.exit().remove()
+        legendTxt.exit().remove();
 
         
 
